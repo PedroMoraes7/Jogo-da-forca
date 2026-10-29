@@ -38,7 +38,7 @@ function jogarLetra(letra, button) {
     state.acertos.push(letraNormalizada);
   } else {
     state.erros.push(letra);
-    errorsDisplay.textContent = state.erros.join(" ");
+    errorsDisplay.textContent = `Letras erradas: ${state.erros.join(" ")} (${state.erros.length}/6)`;
   }
 
   wordDisplay.textContent = [...state.palavra]
@@ -57,8 +57,8 @@ function verificarFim() {
 
   if (venceu || state.erros.length >= 6) {
     messageDisplay.textContent = venceu
-      ? "Você venceu!"
-      : `Fim de jogo! A palavra era ${state.palavra}.`;
+      ? "Você ganhou"
+      : `Você perdeu. A palavra era ${state.palavra}.`;
     keyboard.querySelectorAll("button").forEach((button) => {
       button.disabled = true;
     });
