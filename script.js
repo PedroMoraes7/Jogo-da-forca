@@ -39,6 +39,7 @@ function jogarLetra(letra, button) {
   } else {
     state.erros.push(letra);
     errorsDisplay.textContent = `Letras erradas: ${state.erros.join(" ")} (${state.erros.length}/6)`;
+    document.getElementById(`parte-${state.erros.length}`).style.display = "block";
   }
 
   wordDisplay.textContent = [...state.palavra]
@@ -75,6 +76,9 @@ function reiniciar() {
   state.palavra = sortearPalavra();
   state.acertos = [];
   state.erros = [];
+  document.querySelectorAll(".hangman-part").forEach((part) => {
+    part.style.display = "none";
+  });
   wordDisplay.textContent = Array.from(state.palavra, () => "_").join(" ");
   errorsDisplay.textContent = "";
   messageDisplay.textContent = "";
