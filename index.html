@@ -10,6 +10,19 @@
   <main class="game">
     <h1>Jogo da Forca</h1>
 
+    <svg class="hangman" viewBox="0 0 200 220" role="img" aria-label="Forca">
+      <line class="gallows" x1="20" y1="205" x2="180" y2="205" />
+      <line class="gallows" x1="55" y1="205" x2="55" y2="20" />
+      <line class="gallows" x1="55" y1="20" x2="145" y2="20" />
+      <line class="gallows" x1="145" y1="20" x2="145" y2="45" />
+      <circle id="parte-1" class="hangman-part" cx="145" cy="65" r="20" />
+      <line id="parte-2" class="hangman-part" x1="145" y1="85" x2="145" y2="140" />
+      <line id="parte-3" class="hangman-part" x1="145" y1="100" x2="115" y2="125" />
+      <line id="parte-4" class="hangman-part" x1="145" y1="100" x2="175" y2="125" />
+      <line id="parte-5" class="hangman-part" x1="145" y1="140" x2="120" y2="175" />
+      <line id="parte-6" class="hangman-part" x1="145" y1="140" x2="170" y2="175" />
+    </svg>
+
     <section aria-labelledby="word-heading">
       <h2 id="word-heading">Palavra</h2>
       <p id="palavra" class="word" aria-label="Palavra a adivinhar">_ _ _ _ _</p>

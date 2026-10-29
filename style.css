@@ -26,6 +26,25 @@ h1 {
   margin-top: 0;
 }
 
+.hangman {
+  display: block;
+  width: 200px;
+  height: 220px;
+  margin: 0 auto 24px;
+}
+
+.gallows,
+.hangman-part {
+  fill: none;
+  stroke: #222;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.hangman-part {
+  display: none;
+}
+
 section {
   margin-top: 32px;
 }
