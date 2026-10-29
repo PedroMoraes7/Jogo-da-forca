@@ -63,12 +63,6 @@ function verificarFim() {
     keyboard.querySelectorAll("button").forEach((button) => {
       button.disabled = true;
     });
-    newGameContainer.textContent = "";
-    const newGameButton = document.createElement("button");
-    newGameButton.type = "button";
-    newGameButton.textContent = "Novo jogo";
-    newGameButton.addEventListener("click", reiniciar);
-    newGameContainer.append(newGameButton);
   }
 }
 
@@ -85,10 +79,10 @@ function reiniciar() {
   keyboard.querySelectorAll("button").forEach((button) => {
     button.disabled = false;
   });
-  newGameContainer.textContent = "";
 }
 
 wordDisplay.textContent = Array.from(state.palavra, () => "_").join(" ");
 keyboard.querySelectorAll("button").forEach((button) => {
   button.addEventListener("click", () => jogarLetra(button.textContent, button));
 });
+newGameContainer.addEventListener("click", reiniciar);
